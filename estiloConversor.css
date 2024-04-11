@@ -3,7 +3,10 @@ input,select,button{
 }
 
 .container {
-    border: 1px solid #aaa;
+    border: 8px solid #aaa;
+    border-radius: 30px;
+    background: rgb(208, 214, 221);
+    margin:  0px 400px 0px 400px;
     padding: 50px;
     text-align: center;
     margin-top: 30px;
