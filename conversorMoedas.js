@@ -13,6 +13,24 @@ let valoresConversao = {
     }
 }
 
+let botaoConverter = document.getElementById("botao-converter");
+botaoConverter.addEventListener("click", converter);
+
+let botaoLimpar = document.getElementById("botao-limpar");
+botaoLimpar.addEventListener("click", limpar);
+
+let botaoInverter = document.getElementById("botao-inverter");
+botaoInverter.addEventListener("click", inverter);
+
+let botaoAceitaMensagem = document.getElementById("botao-aceita-mensagem");
+botaoAceitaMensagem.addEventListener("click", aceitaMensagem);
+
+if(localStorage.getItem("aceitocookie") == "1") {
+    
+}
+
+
+
 
 
 let valorUsuario = document.getElementById("valor-usuario");
@@ -28,12 +46,19 @@ valorUsuario.addEventListener("keypress", function(event) {
 
 });
 
+function aceitaMensagem() {
+   let divMensagemUsuario = document.getElementById("container-mensagem-usuario");
+   divMensagemUsuario.classList.add("oculto");
+
+   localStorage.setItem("aceitoCookie", "1");
+}
+
 function limpar() {
     let valorUsuario = document.getElementById("valor-usuario");
     let resultado = document.getElementById("resultado");
 
     valorUsuario.value = "";
-    resultado.textCon
+    resultado.textContent = "";
 };
 
 
