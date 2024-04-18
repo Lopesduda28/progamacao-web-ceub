@@ -26,7 +26,16 @@ let botaoAceitaMensagem = document.getElementById("botao-aceita-mensagem");
 botaoAceitaMensagem.addEventListener("click", aceitaMensagem);
 
 if(localStorage.getItem("aceitocookie") == "1") {
-    
+    aceitaMensagem();
+}
+
+function salvaResultadoNoHistorico(conversao) {
+    let conversaoEmJson = JSON.stringify(conversao);
+    localStorage.setItem("historico", conversao);
+}
+
+function recuperaHistoricoDeConversoes() {
+    let historico = localStorage.getItem("historico");
 }
 
 
@@ -99,6 +108,15 @@ function converter() {
     let paragrafoResultado = document.getElementById("resultado");
     paragrafoResultado.textContent = simbolo + " " + conversao.toFixed(2);
     
+    let resultadoDaConversao = {
+        valor: valorUsuario,
+        moeda1: moeda1,
+        moeda2: moedaDestino,
+        resultado: conversao
+    }
+
+    salvaResultadoNoHistorico(resultadoDaConversao);
+
 }
 
 function inverter() {
